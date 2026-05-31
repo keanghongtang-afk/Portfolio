@@ -1,5 +1,57 @@
 body{
-    background: linear-gradient(to bottom, white, rgba(11, 255, 255, 0.808));
+    background: linear-gradient(to bottom, white, rgba(177, 255, 255, 0.808), white);
+}
+
+.about {
+    z-index: 0;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    opacity: 0;
+    animation: appear-in 1s ease forwards;
+}
+
+.abt {
+    background: linear-gradient(to bottom, white,white,white, rgba(57, 103, 103, 0.169));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    padding-top: 25px;
+}
+
+.abt .head{
+    width: fit-content;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+.abt > p{
+    text-decoration: solid;
+    text-align: center;
+    font-size: 25px;
+}
+
+@keyframes appear-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .profile {
@@ -23,35 +75,193 @@ body{
     border-top-left-radius: 10px;border-top-right-radius: 10px;
 }
 
-.about-me{
+.idea{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.about-me h3, .about-me h4 {
+.idea h3, .idea h4 {
     font-size: 50px;
     text-align: center;
-    color: rgb(240, 249, 249);
+    color: rgb(20, 39, 39);
     text-shadow: 2px 2px 5px black;
 }
 
-.about-me p {
+.idea p {
     width: 60%;
     text-align: center;
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
 }
 
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn button{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black;
+}
+
+.btn .view {
+    background-color: black;
+    color: white;
+}
+
+.btn .contact {
+    background-color: white;
+}
+
+.icon {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.icon .ic {
+    box-sizing: border-box;
+    color: black;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.icon .ic:hover{
+    color: black;
+    border: 2px solid rgb(1, 255, 170);
+}
+
+.ellipse {
+    width: 25px;
+    height: 50px;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 50px;
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: scale(0.6);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+
+  position: absolute;
+  animation: moveDot 1.5s ease-in-out infinite;
+}
+
+.section1 {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.section1:nth-child(1) {
+    width: 50%;
+    height: 75%;
+}
+
+.section1:nth-child(2) {
+    flex: 1;
+  height: 75%;
+  width: 0%;
+}
+
+.contain-img {
+    position: relative;
+    background: #f5f7ff;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+.programImg{
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+.exp {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+
+    background: white;
+    padding: 20px 25px;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contain-text{
+    max-width: 625px;
+}
+
+.contain-text .contain-exp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contain-text > p{
+    font-size: larger;
+}
+
+.contain-text .contain-exp .box0 {
+    display: flex;
+    flex-direction: row;
+}
+
+.contain-text .contain-exp .box1 {
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 225px;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
 @media (max-width: 768px) {
-    .about-me h3, .about-me h4 {
+    .idea h3, .idea h4 {
     font-size: 30px;
     text-align: center;
     color: rgb(240, 249, 249);
     text-shadow: 2px 2px 5px black;
     }
-    .about-me p {
+    .idea p {
         width: 60%;
         text-align: center;
         font-size: 30px;
